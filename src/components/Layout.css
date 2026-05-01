@@ -1,0 +1,40 @@
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f0f2f5;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Desktop - Sidebar open */
+.main-content.sidebar-open {
+    margin-left: 260px;
+}
+
+/* Desktop - Sidebar closed */
+.main-content.sidebar-closed {
+    margin-left: 70px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .main-content.sidebar-open {
+        margin-left: 220px;
+    }
+}
+
+/* Mobile - No margin, sidebar is overlay */
+@media (max-width: 768px) {
+
+    .main-content.sidebar-open,
+    .main-content.sidebar-closed {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+}

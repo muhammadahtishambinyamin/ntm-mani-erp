@@ -1,0 +1,172 @@
+.customer-bank-matrix-container {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
+}
+
+.matrix-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.matrix-table thead {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.matrix-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.matrix-table th.text-right {
+    text-align: right;
+}
+
+.customer-row {
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.customer-row:hover {
+    background: #f1f5f9;
+}
+
+.expand-cell {
+    padding: 1rem 0.75rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.customer-row:hover .expand-cell {
+    color: #4facfe;
+}
+
+.customer-cell {
+    padding: 1rem;
+}
+
+.customer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.customer-name {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 0.9375rem;
+}
+
+.customer-code {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    background: #e2e8f0;
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.bank-detail-row {
+    background: white;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.2s ease;
+}
+
+.bank-detail-row:hover {
+    background: #fefce8;
+}
+
+.bank-detail-cell {
+    padding: 0.875rem 1rem 0.875rem 2.5rem;
+}
+
+.bank-detail-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.bank-icon {
+    font-size: 1.25rem;
+}
+
+.bank-detail-name {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.875rem;
+    display: block;
+}
+
+.bank-detail-code {
+    font-size: 0.6875rem;
+    color: #94a3b8;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+}
+
+.amount-cell {
+    padding: 1rem;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    color: #334155;
+}
+
+.amount-cell.detail {
+    font-size: 0.8125rem;
+    color: #64748b;
+}
+
+.amount-cell.success {
+    color: #059669;
+}
+
+.amount-cell.outstanding {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .customer-bank-matrix-container {
+        padding: 1rem;
+    }
+
+    .matrix-table {
+        font-size: 0.75rem;
+    }
+
+    .matrix-table th,
+    .matrix-table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .customer-name {
+        font-size: 0.875rem;
+    }
+
+    .bank-detail-cell {
+        padding-left: 1.5rem;
+    }
+
+    .bank-icon {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,218 @@
+.bank-summary-container {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
+}
+
+.title-icon {
+    margin-right: 0.5rem;
+    color: #667eea;
+}
+
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.bank-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.bank-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.bank-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.bank-card:hover::before {
+    transform: scaleX(1);
+}
+
+.bank-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.bank-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.bank-card:hover .bank-icon-wrapper {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.bank-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.bank-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.25rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bank-code {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    background: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.bank-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.metric.highlight {
+    background: linear-gradient(135deg, #fef3c7 0%, #fef9e7 100%);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.metric-value {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+}
+
+.metric-value.utilized {
+    color: #3b82f6;
+}
+
+.metric-value.recovered {
+    color: #10b981;
+}
+
+.metric-value.outstanding {
+    color: #ef4444;
+    font-size: 1.125rem;
+}
+
+.bank-footer {
+    margin-top: 1rem;
+}
+
+.exposure-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.exposure-fill {
+    height: 100%;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+}
+
+.exposure-percentage {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.no-data-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #94a3b8;
+}
+
+.no-data-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.no-data-message p {
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bank-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .bank-card {
+        padding: 1.25rem;
+    }
+
+    .bank-name {
+        font-size: 1rem;
+    }
+
+    .metric-value {
+        font-size: 0.875rem;
+    }
+
+    .metric-value.outstanding {
+        font-size: 1rem;
+    }
+}

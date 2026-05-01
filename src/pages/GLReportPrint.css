@@ -1,0 +1,847 @@
+/* ===========================
+   GL Report Print Styles
+   Enhanced for readability and print
+   =========================== */
+
+.print-container {
+    min-height: 100vh;
+    background: #f5f7fa;
+    padding: 24px;
+}
+
+/* Action Buttons */
+.print-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.print-actions button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+}
+
+.btn-print {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-print:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-export {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.btn-export:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(67, 233, 123, 0.4);
+}
+
+.btn-close {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-close:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Report Page */
+.report-page {
+    background: white;
+    padding: 48px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1600px;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+/* Report Header */
+.report-header {
+    text-align: center;
+    padding-bottom: 32px;
+    border-bottom: 4px solid #667eea;
+    margin-bottom: 40px;
+}
+
+.report-header h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.report-header h2 {
+    font-size: 28px;
+    color: #667eea;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+}
+
+.report-date {
+    font-size: 16px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Filter Summary */
+.filter-summary {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 28px 32px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 5px solid #667eea;
+}
+
+.filter-summary h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+}
+
+.filter-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.filter-item {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 15px;
+    min-width: 90px;
+}
+
+.filter-value {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Report Summary Section */
+.report-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+    padding: 32px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 5px solid #667eea;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-item.highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.summary-item.highlight .summary-label,
+.summary-item.highlight .summary-value {
+    color: white;
+}
+
+.summary-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    font-family: 'Courier New', monospace;
+}
+
+.summary-item.highlight .summary-value {
+    font-size: 26px;
+}
+
+/* Table Container */
+.report-table-container {
+    overflow-x: auto;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Report Table */
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.report-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.report-table th {
+    padding: 18px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.report-table th.amount-header {
+    text-align: right;
+}
+
+.currency-label {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.95;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.report-table tbody tr {
+    border-bottom: 1px solid #e1e8ed;
+    transition: background 0.2s ease;
+}
+
+.report-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.report-table tbody tr:nth-child(even) {
+    background: #fafbfc;
+}
+
+.report-table tbody tr:nth-child(even):hover {
+    background: #f1f3f5;
+}
+
+.report-table td {
+    padding: 14px;
+    color: #2c3e50;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+.description-cell {
+    max-width: 300px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.amount-cell {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 15px;
+}
+
+.balance-cell {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: #667eea;
+    font-size: 16px;
+}
+
+/* Table Footer */
+.report-table tfoot {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 3px solid #667eea;
+}
+
+.total-row td {
+    padding: 20px 14px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.total-label {
+    text-align: right;
+    color: #2c3e50;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.total-amount {
+    font-size: 17px;
+    color: #2c3e50;
+}
+
+.total-balance {
+    font-size: 18px;
+    color: #667eea;
+}
+
+/* Report Footer */
+.report-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 3px solid #e1e8ed;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section p {
+    margin: 6px 0;
+    font-size: 16px;
+    color: #495057;
+    font-weight: 500;
+}
+
+.footer-section strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.signature-line {
+    margin-top: 60px !important;
+    margin-bottom: 12px !important;
+    border-top: 2px solid #2c3e50;
+    padding-top: 10px;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+}
+
+/* Print Error */
+.print-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 24px;
+}
+
+.print-error h2 {
+    color: #e74c3c;
+    font-size: 28px;
+}
+
+.print-error button {
+    padding: 14px 32px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.print-error button:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   PRINT STYLES
+   =========================== */
+
+@media print {
+
+    /* Hide non-print elements */
+    .no-print {
+        display: none !important;
+    }
+
+    /* Reset page */
+    .print-container {
+        background: white;
+        padding: 0;
+        margin: 0;
+    }
+
+    .report-page {
+        box-shadow: none;
+        padding: 8mm 6mm;
+        max-width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    /* Page setup - A4 Landscape with minimal margins */
+    @page {
+        size: A4 landscape;
+        margin: 8mm 6mm;
+    }
+
+    /* Compact Header */
+    .report-header {
+        padding-bottom: 6px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #000;
+    }
+
+    .report-header h1 {
+        font-size: 16px;
+        color: #000;
+        margin: 0 0 3px 0;
+        line-height: 1.1;
+    }
+
+    .report-header h2 {
+        font-size: 13px;
+        color: #000;
+        margin: 0 0 4px 0;
+        line-height: 1.1;
+    }
+
+    .report-date {
+        font-size: 9px;
+        color: #333;
+        line-height: 1.1;
+    }
+
+    /* Compact Filter Summary */
+    .filter-summary {
+        background: #f5f5f5;
+        border: 1px solid #ccc;
+        padding: 6px 8px;
+        margin-bottom: 10px;
+        border-left: 3px solid #000;
+        page-break-inside: avoid;
+    }
+
+    .filter-summary h3 {
+        font-size: 10px;
+        color: #000;
+        margin: 0 0 4px 0;
+        font-weight: 700;
+    }
+
+    .filter-summary-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .filter-item {
+        gap: 4px;
+    }
+
+    .filter-label {
+        font-size: 8px;
+        color: #000;
+        min-width: 50px;
+    }
+
+    .filter-value {
+        font-size: 8px;
+        color: #000;
+        font-weight: 600;
+    }
+
+    /* Optimized Table Layout for A4 Landscape */
+    .report-table-container {
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 10px;
+        overflow: visible;
+    }
+
+    .report-table {
+        font-size: 8px;
+        border: 1px solid #000;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    /* Fixed Column Widths - Optimized for A4 Landscape (277mm width) */
+    .report-table th:nth-child(1),
+    .report-table td:nth-child(1) {
+        width: 13%;
+        /* Company */
+    }
+
+    .report-table th:nth-child(2),
+    .report-table td:nth-child(2) {
+        width: 15%;
+        /* Customer */
+    }
+
+    .report-table th:nth-child(3),
+    .report-table td:nth-child(3) {
+        width: 12%;
+        /* Bank */
+    }
+
+    .report-table th:nth-child(4),
+    .report-table td:nth-child(4) {
+        width: 9%;
+        /* Dept */
+    }
+
+    .report-table th:nth-child(5),
+    .report-table td:nth-child(5) {
+        width: 25%;
+        /* Description */
+    }
+
+    .report-table th:nth-child(6),
+    .report-table td:nth-child(6) {
+        width: 11%;
+        /* Utilized */
+    }
+
+    .report-table th:nth-child(7),
+    .report-table td:nth-child(7) {
+        width: 11%;
+        /* Recovered */
+    }
+
+    .report-table th:nth-child(8),
+    .report-table td:nth-child(8) {
+        width: 11%;
+        /* Balance - Fixed width to prevent overflow */
+    }
+
+    .report-table thead {
+        background: #000 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .report-table th {
+        padding: 5px 3px;
+        font-size: 8px;
+        border: 1px solid #000;
+        font-weight: 700;
+        line-height: 1.2;
+        vertical-align: middle;
+    }
+
+    .currency-label {
+        font-size: 7px;
+        display: block;
+        margin-top: 1px;
+    }
+
+    .report-table tbody tr {
+        border-bottom: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    .report-table tbody tr:nth-child(even) {
+        background: #f9f9f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .report-table td {
+        padding: 4px 3px;
+        font-size: 8px;
+        color: #000;
+        border: 1px solid #ccc;
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow: hidden;
+    }
+
+    .amount-cell,
+    .balance-cell {
+        font-size: 8px;
+        color: #000;
+        text-align: right;
+        font-family: 'Courier New', monospace;
+        padding-right: 4px !important;
+        white-space: nowrap;
+    }
+
+    .description-cell {
+        font-size: 7px;
+        line-height: 1.1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Table Footer - Compact */
+    .report-table tfoot {
+        background: #e0e0e0 !important;
+        border-top: 2px solid #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .total-row td {
+        padding: 5px 3px;
+        font-size: 9px;
+        font-weight: 700;
+        border: 1px solid #000;
+    }
+
+    .total-label {
+        font-size: 9px;
+        color: #000;
+        text-align: right;
+    }
+
+    .total-amount,
+    .total-balance {
+        font-size: 9px;
+        color: #000;
+        font-weight: 700;
+        padding-right: 4px !important;
+    }
+
+    /* Compact Report Summary */
+    .report-summary {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+        margin-top: 10px;
+        padding: 8px;
+        background: #f5f5f5 !important;
+        border: 1px solid #ccc;
+        border-left: 3px solid #000;
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .summary-item {
+        padding: 5px;
+        background: white !important;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .summary-item.highlight {
+        background: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .summary-item.highlight .summary-label,
+    .summary-item.highlight .summary-value {
+        color: white !important;
+    }
+
+    .summary-label {
+        font-size: 7px;
+        color: #666;
+        margin-bottom: 2px;
+    }
+
+    .summary-value {
+        font-size: 11px;
+        color: #000;
+        line-height: 1.1;
+    }
+
+    .summary-item.highlight .summary-label {
+        color: white !important;
+    }
+
+    .summary-item.highlight .summary-value {
+        font-size: 12px;
+        color: white !important;
+    }
+
+    /* Ensure table headers repeat on each page */
+    .report-table thead {
+        display: table-header-group;
+    }
+
+    .report-table tfoot {
+        display: table-footer-group;
+    }
+
+    /* Prevent orphans */
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    /* Force page breaks when needed */
+    .report-summary {
+        page-break-before: avoid;
+    }
+}
+
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+@media (max-width: 1400px) {
+    .report-page {
+        padding: 40px;
+    }
+
+    .report-table {
+        font-size: 14px;
+    }
+
+    .report-table th,
+    .report-table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .report-page {
+        padding: 32px;
+    }
+
+    .report-header h1 {
+        font-size: 30px;
+    }
+
+    .report-header h2 {
+        font-size: 24px;
+    }
+
+    .report-table {
+        font-size: 13px;
+    }
+
+    .filter-summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .report-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .print-container {
+        padding: 16px;
+    }
+
+    .report-page {
+        padding: 24px;
+    }
+
+    .print-actions {
+        flex-direction: column;
+    }
+
+    .print-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .report-header h1 {
+        font-size: 24px;
+    }
+
+    .report-header h2 {
+        font-size: 20px;
+    }
+
+    .filter-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-table-container {
+        overflow-x: scroll;
+    }
+
+    .report-table {
+        font-size: 12px;
+        min-width: 1000px;
+    }
+
+    .report-table th,
+    .report-table td {
+        padding: 10px 8px;
+    }
+
+    .report-summary {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px;
+    }
+
+    .summary-value {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .report-page {
+        padding: 20px;
+    }
+
+    .report-header h1 {
+        font-size: 20px;
+    }
+
+    .report-header h2 {
+        font-size: 18px;
+    }
+
+    .filter-summary {
+        padding: 20px;
+    }
+
+    .report-table {
+        font-size: 11px;
+    }
+
+    .report-summary {
+        padding: 20px;
+    }
+
+    .summary-value {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,266 @@
+.customer-utilization-container {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.25rem 0;
+}
+
+.section-subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
+
+.dashboard-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.dashboard-search-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.utilization-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.utilization-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.utilization-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.utilization-table th:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.utilization-table th.text-right {
+    text-align: right;
+}
+
+.utilization-table tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.utilization-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.utilization-table tbody tr.row-critical {
+    background: #fef2f2;
+}
+
+.utilization-table tbody tr.row-critical:hover {
+    background: #fee2e2;
+}
+
+.utilization-table tbody tr.row-high {
+    background: #fff7ed;
+}
+
+.utilization-table tbody tr.row-high:hover {
+    background: #ffedd5;
+}
+
+.utilization-table td {
+    padding: 1rem;
+}
+
+.code-cell {
+    font-weight: 600;
+    color: #475569;
+    font-family: 'Courier New', monospace;
+}
+
+.name-cell {
+    font-weight: 500;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.risk-icon {
+    color: #ef4444;
+    font-size: 1rem;
+    animation: pulse-icon 2s infinite;
+}
+
+@keyframes pulse-icon {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.amount-cell {
+    font-weight: 600;
+    color: #334155;
+    font-family: 'Courier New', monospace;
+}
+
+.amount-cell.success {
+    color: #059669;
+}
+
+.amount-cell.outstanding {
+    color: #dc2626;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 0.5s ease, background 0.3s ease;
+    border-radius: 4px;
+}
+
+.progress-fill.low {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.progress-fill.medium {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.progress-fill.high {
+    background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+.progress-fill.critical {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    animation: pulse-bar 2s infinite;
+}
+
+@keyframes pulse-bar {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.progress-text {
+    font-weight: 600;
+    color: #475569;
+    min-width: 45px;
+    text-align: right;
+}
+
+.no-data {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .utilization-table {
+        font-size: 0.75rem;
+    }
+
+    .utilization-table th,
+    .utilization-table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .progress-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .progress-bar {
+        width: 100%;
+    }
+}
